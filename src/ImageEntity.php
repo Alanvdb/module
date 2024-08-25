@@ -18,5 +18,6 @@ class ImageEntity extends PostEntity
     public function setAltText(string $altText) : self
     {
         $this->altText = $altText;
+        return $this;
     }
 }
