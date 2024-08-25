@@ -4,6 +4,7 @@ namespace AlanVdb\Module;
 
 use AlanVdb\Module\Common\HasCategoryEntity;
 use AlanVdb\Module\Common\HasTagEntities;
+use AlanVdb\Module\ImageEntity;
 use DateTime;
 
 class PostEntity
@@ -11,14 +12,14 @@ class PostEntity
     use HasCategoryEntity;
     use HasTagEntities;
 
-    protected $id;
-    protected $slug;
-    protected $title;
-    protected $thumb;
-    protected $description;
-    protected $body;
-    protected $createdAt;
-    protected $updatedAt;
+    protected ?string      $id          = null;
+    protected ?string      $slug        = null;
+    protected ?string      $title       = null;
+    protected ?ImageEntity $thumb       = null;
+    protected ?string      $description = null;
+    protected ?string      $body        = null;
+    protected ?DateTime    $createdAt   = null;
+    protected ?DateTime    $updatedAt   = null;
     
     public function __construct(?array $data = null)
     {
@@ -77,12 +78,12 @@ class PostEntity
         return $this;
     }
 
-    public function getThumb() : ?string
+    public function getThumb() : ?ImageEntity
     {
         return $this->thumb;
     }
 
-    public function setThumb(?string $thumb = null) : self
+    public function setThumb(?ImageEntity $thumb = null) : self
     {
         $this->thumb = $thumb;
         return $this;
