@@ -41,6 +41,20 @@ class PostEntity
         return $this->$method();
     }
 
+    public function getId() : ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id = null) : self
+    {
+        if ($id === '') {
+            throw new \InvalidArgumentException('Empty entity ID provided.');
+        }
+        $this->id = $id;
+        return $this;
+    }
+
     public function getSlug() : ?string
     {
         return $this->slug;
