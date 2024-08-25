@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AlanVdb\Model\Entity;
+namespace AlanVdb\Module;
 
 use AlanVdb\Module\Common\HasCategoryEntity;
 use AlanVdb\Module\Common\HasTagEntities;
