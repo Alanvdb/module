@@ -1,0 +1,18 @@
+{
+    "name": "alanvdb/module",
+    "description": "Personal MVC system based on my own libraries.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AlanVdb\\Module\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alanvdb",
+            "email": "alanvdb.coder@gmail.com"
+        }
+    ],
+    "require": {}
+}
