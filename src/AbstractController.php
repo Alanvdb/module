@@ -26,6 +26,10 @@ abstract class AbstractController
         $this->responseFactory = $responseFactory;
         $this->streamFactory = $streamFactory;
         $this->uriGenerator = $uriGenerator;
+
+        if (method_exists($this, 'setup')) {
+            $this->setup();
+        }
     }
 
     protected function render(string $template, array $vars = []) : string
