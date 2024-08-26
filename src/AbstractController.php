@@ -2,26 +2,30 @@
 
 namespace AlanVdb\Module;
 
-use AlanVdb\Renderer\Definition\RendererInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
+use AlanVdb\Renderer\Definition\RendererInterface;
 use AlanVdb\Router\Definition\UriGeneratorInterface;
 
 abstract class AbstractController
 {
+    protected $request;
     protected $renderer;
     protected $responseFactory;
     protected $streamFactory;
     protected $uriGenerator;
 
     public function __construct(
+        ServerRequestInterface $request,
         RendererInterface $renderer,
         ResponseFactoryInterface $responseFactory,
         StreamFactoryInterface $streamFactory,
         UriGeneratorInterface $uriGenerator
     ) {
+        $this->request = $request;
         $this->renderer = $renderer;
         $this->responseFactory = $responseFactory;
         $this->streamFactory = $streamFactory;
