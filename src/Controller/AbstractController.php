@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AlanVdb\Module;
+namespace AlanVdb\Module\Controller;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -19,11 +19,11 @@ abstract class AbstractController
     protected $uriGenerator;
 
     public function __construct(
-        ServerRequestInterface $request,
-        RendererInterface $renderer,
+        ServerRequestInterface   $request,
+        RendererInterface        $renderer,
         ResponseFactoryInterface $responseFactory,
-        StreamFactoryInterface $streamFactory,
-        UriGeneratorInterface $uriGenerator
+        StreamFactoryInterface   $streamFactory,
+        UriGeneratorInterface    $uriGenerator
     ) {
         $this->request = $request;
         $this->renderer = $renderer;
