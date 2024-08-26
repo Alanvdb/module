@@ -116,10 +116,9 @@ class PostEntity
         return $this->createdAt;
     }
 
-    public function setCreatedAt(int $timestamp) : self
+    public function setCreatedAt(DateTime $date) : self
     {
-        $this->createdAt = new DateTime();
-        $this->createdAt->setTimestamp($timestamp);
+        $this->createdAt = $date;
         return $this;
     }
 
@@ -128,10 +127,9 @@ class PostEntity
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(int $timestamp) : self
+    public function setUpdatedAt(DateTime $date) : self
     {
-        $this->updatedAt = new DateTime();
-        $this->updatedAt->setTimestamp($timestamp);
+        $this->updatedAt = $date;
         return $this;
     }
 }
