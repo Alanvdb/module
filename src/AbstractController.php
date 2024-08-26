@@ -41,9 +41,9 @@ abstract class AbstractController
         return $this->renderer->render($template, $vars);
     }
 
-    protected function createResponse(string|StreamInterface $view) : ResponseInterface
+    protected function createResponse(string|StreamInterface $view, int $code = 200) : ResponseInterface
     {
-        $response = $this->responseFactory->createResponse(200);
+        $response = $this->responseFactory->createResponse($code);
         if (is_string($view)) {
             $view = $this->streamFactory->createStream($view);
         }
