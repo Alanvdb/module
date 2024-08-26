@@ -83,6 +83,14 @@ abstract class AbstractEntity
         throw new AttributeNotFound("Attribute '$attribute' not found.");
     }
 
+    public function __set(string $attribute, mixed $value) : void
+    {
+        if (array_key_exists($attribute, $this->fillables)) {
+            $this->fillables[$attribute] = $value;
+        }
+        throw new AttributeNotFound("Attribute '$attribute' not found.");
+    }
+
     /**
      * Validates the entity's attributes using the associated validators.
      *
