@@ -4,10 +4,11 @@ namespace AlanVdb\Module\Entity\Common;
 
 trait Hydrator
 {
-    public function hydrate(array $attributes)
+    public function hydrate(array $attributes) : self
     {
         foreach ($attributes as $attrName => $attrValue) {
             $this->$attrName = $attrValue;
         }
+        return $this;
     }
 }
