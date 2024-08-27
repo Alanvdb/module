@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 namespace AlanVdb\Module\Entity;
+
 use AlanVdb\Module\Entity\Exception\InvalidFillables;
 use AlanVdb\Module\Entity\Exception\AttributeNotFound;
 
@@ -80,7 +81,8 @@ abstract class AbstractEntity
                 return $this->$method();
             }
         }
-        throw new AttributeNotFound("Attribute '$attribute' not found.");
+        $class = $this::class;
+        throw new AttributeNotFound("Attribute '$attribute' not found for class '$class'.");
     }
 
     public function __set(string $attribute, mixed $value) : void
