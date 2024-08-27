@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
 namespace AlanVdb\Module\Entity;
-
 use AlanVdb\Module\Entity\Exception\InvalidFillables;
+use AlanVdb\Module\Entity\Exception\AttributeNotFound;
 
 /**
  * Abstract class that represents an entity with fillable attributes and validation capabilities.
