@@ -89,9 +89,10 @@ abstract class AbstractEntity
     {
         if (array_key_exists($attribute, $this->fillables)) {
             $this->fillables[$attribute] = $value;
+        } else {
+            $class = $this::class;
+            throw new AttributeNotFound("Attribute '$attribute' not found for class '$class'.");
         }
-        $class = $this::class;
-        throw new AttributeNotFound("Attribute '$attribute' not found for class '$class'.");
     }
 
     /**
