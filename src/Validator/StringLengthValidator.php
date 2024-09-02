@@ -31,8 +31,8 @@ class stringLengthValidator implements ValidatorInterface
         return $this->min <= $length && $length <= $this->max;
     }
 
-    public function getErrorMessage() : string
+    public function getErrorMessage(string $label) : string
     {
-        return "{label} length must be from $min to $max characters.";
+        return "$label length must be from $min to $max characters.";
     }
 }

@@ -6,5 +6,5 @@ interface ValidatorInterface
 {
     public function isValid($value) : bool;
 
-    public function getErrorMessage() : string;
+    public function getErrorMessage(string $label) : string;
 }
